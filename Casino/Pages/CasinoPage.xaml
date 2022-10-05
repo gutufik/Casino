@@ -20,22 +20,23 @@
         </Grid.ColumnDefinitions>
 
         <TextBlock x:Name="leftDrum">
-            0
+            
         </TextBlock>
         <TextBlock 
             Grid.Column="1"
             x:Name="centerDrum">
-            0
+            
         </TextBlock>
         <TextBlock 
             Grid.Column="2"
             x:Name="rightDrum">
-            0
+            
         </TextBlock>
         <Button
             Grid.Row="1"
             Grid.Column="1"
-            x:Name="BtnStartCasino">
+            x:Name="BtnStartCasino"
+            Click="BtnStartCasino_Click">
             Start
         </Button>
     </Grid>
