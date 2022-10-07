@@ -35,8 +35,5 @@
             <Button x:Name="btnLogin" Content="Войти" Click="btnLogin_Click"/>
             <Button x:Name="btnRegistration" Content="Зарегистрироваться" Click="btnRegistration_Click"/>
         </StackPanel>
-        <StackPanel Grid.Column="1" Grid.ColumnSpan="2" Grid.Row="4">
-            <CheckBox x:Name="cbRemember" Content="Запомнить данные" IsChecked="True"/>
-        </StackPanel>
     </Grid>
 </Page>

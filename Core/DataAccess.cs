@@ -14,10 +14,17 @@ namespace Core
         public static User GetUser(string login, string password) => GetUsers().FirstOrDefault(x => x.Login == login && x.Password == password);
         public static bool SaveUser(User user)
         {
-            if (user.Id == 0)
-                Casino.GetContext().Users.Add(user);
+            try
+            {
+                if (user.Id == 0)
+                    Casino.GetContext().Users.Add(user);
 
-            return Convert.ToBoolean(Casino.GetContext().SaveChanges());
+                return Convert.ToBoolean(Casino.GetContext().SaveChanges());
+            }
+            catch (Exception ex)
+            {
+                return false;
+            }
         }
     }
 }

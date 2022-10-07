@@ -23,6 +23,7 @@ namespace Casino
         public MainWindow()
         {
             InitializeComponent();
+            frame.Navigated += FrameNavigated;
             frame.NavigationService.Navigate(new Pages.LoginPage());
         }
         private void btnGoBack_Click(object sender, RoutedEventArgs e)
@@ -40,18 +41,15 @@ namespace Casino
         {
             if (frame.Content is Pages.LoginPage)
             {
-                btnGoForward.Visibility = Visibility.Hidden;
                 btnGoBack.Visibility = Visibility.Hidden;
             }
             else if (frame.Content is Pages.RegistrationPage)
             {
-                btnGoForward.Visibility = Visibility.Hidden;
                 btnGoBack.Visibility = Visibility.Visible;
             }
             else
             {
                 btnGoBack.Visibility = Visibility.Visible;
-                btnGoForward.Visibility = Visibility.Visible;
             }
         }
     }

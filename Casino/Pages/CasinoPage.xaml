@@ -10,7 +10,7 @@
 
     <Grid>
         <Grid.RowDefinitions>
-            <RowDefinition Height="0.2*"/>
+            <RowDefinition Height="0.5*"/>
             <RowDefinition/>
             <RowDefinition/>
         </Grid.RowDefinitions>
@@ -19,32 +19,55 @@
             <ColumnDefinition/>
             <ColumnDefinition/>
         </Grid.ColumnDefinitions>
-
-        <TextBlock x:Name="TbPoint" Text="{Binding Path=Point}"/>
+        <StackPanel Grid.ColumnSpan="3">
+            <StackPanel Orientation="Horizontal"
+                        
+                        HorizontalAlignment="Center">
+                <TextBlock Text="Привет, "/>
+                <TextBlock Text="{Binding Login}"/>
+            </StackPanel>
+            <StackPanel Orientation="Horizontal">
+            
+                <TextBlock Text="Баланс: "/>
+                <TextBlock x:Name="TbPoint" >
+                    <Run Text="{Binding Path=Point}"/>
+                </TextBlock>
+            </StackPanel>
+        </StackPanel>
 
         <TextBlock 
             Grid.Row="1"
             x:Name="leftDrum">
             
         </TextBlock>
+        <Image Grid.Row="1" 
+               x:Name="leftImage"
+               Source="/Images/1.png"/>
         <TextBlock 
             Grid.Row="1"
             Grid.Column="1"
             x:Name="centerDrum">
             
         </TextBlock>
+        <Image Grid.Row="1"
+               Grid.Column="1" 
+               x:Name="centerImage"
+               Source="/Images/1.png"/>
         <TextBlock 
             Grid.Row="1"
             Grid.Column="2"
             x:Name="rightDrum">
             
         </TextBlock>
+        <Image Grid.Row="1"
+               Grid.Column="2" x:Name="rightImage"
+               Source="/Images/1.png"/>
         <Button
             Grid.Row="2"
             Grid.Column="1"
             x:Name="BtnStartCasino"
             Click="BtnStartCasino_Click">
-            Start
+            Начать
         </Button>
     </Grid>
 </Page>

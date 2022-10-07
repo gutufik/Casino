@@ -28,6 +28,11 @@ namespace Casino.Pages
         {
             var login = tbLogin.Text;
             var passwrod = pbPassword.Password;
+            if (login == "" || passwrod == "")
+            {
+                MessageBox.Show("Логин и пароль должны быть заполнены");
+                return;
+            }    
             var user = new User { Login = login, Password = passwrod, Point = 100 };
             if (DataAccess.SaveUser(user))
             {
