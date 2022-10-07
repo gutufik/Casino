@@ -5,7 +5,8 @@
         xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006"
         xmlns:local="clr-namespace:Casino"
         mc:Ignorable="d"
-        Title="MainWindow" Height="450" Width="800">
+        Title="MishaCasino" MinHeight="500" MinWidth="800"
+        Height="500" Width="800">
     <Grid>
         <Grid.ColumnDefinitions>
             <ColumnDefinition/>
@@ -16,6 +17,7 @@
         </Grid.RowDefinitions>
         <StackPanel Orientation="Horizontal">
             <Button x:Name="btnGoBack" Content="Назад" Click="btnGoBack_Click"/>
+            <Button x:Name="btnLogout" Content="Выйти" Click="btnLogout_Click"/>
         </StackPanel>
 
         <Frame x:Name="frame" NavigationUIVisibility="Hidden" Grid.Row="1"/>

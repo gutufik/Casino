@@ -22,9 +22,12 @@ namespace Casino.Pages
     /// </summary>
     public partial class LoginPage : Page
     {
+        private static NavigationService NavigationService { get; } = (Application.Current.MainWindow as MainWindow).frame.NavigationService;
         public LoginPage()
         {
             InitializeComponent();
+            
+            
         }
 
         private void btnRegistration_Click(object sender, RoutedEventArgs e)
@@ -39,6 +42,9 @@ namespace Casino.Pages
 
             if ((App.User = DataAccess.GetUser(login, password)) != null)
             {
+                Properties.Settings.Default.Login = login;
+                Properties.Settings.Default.Password = password;
+                Properties.Settings.Default.Save();
                 NavigationService.Navigate(new CasinoPage());
             }
             else
