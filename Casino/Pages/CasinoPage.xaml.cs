@@ -38,11 +38,12 @@ namespace Casino.Pages
             var rnd = new Random();
 
             await Task.Run(() => {
-
+                
                 for (int i = 0; i < 10; i++)
                 {
                     Thread.Sleep(500);
-                    Dispatcher.Invoke(() => { 
+                    Dispatcher.Invoke(() => {
+                        BtnStartCasino.Visibility = Visibility.Hidden;
                         leftDrum.Text = rnd.Next(1, 6).ToString();
                         leftImage.Source = new BitmapImage(new Uri($"/Images/{leftDrum.Text}.png", UriKind.Relative));
 
@@ -75,6 +76,7 @@ namespace Casino.Pages
                     DataAccess.SaveUser(App.User);
                     DataContext = App.User;
                     TbPoint.Text = App.User.Point.ToString();
+                    BtnStartCasino.Visibility = Visibility.Visible;
                 });
             });
         }

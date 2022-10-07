@@ -57,7 +57,8 @@ namespace Casino
             }
             else
             {
-                btnGoBack.Visibility = Visibility.Visible;
+                if (frame.NavigationService.CanGoBack)
+                    btnGoBack.Visibility = Visibility.Visible;
                 btnLogout.Visibility = Visibility.Visible;
             }
         }
