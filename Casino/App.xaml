@@ -12,7 +12,7 @@
             </ResourceDictionary.MergedDictionaries>
         
             <Style TargetType="Grid">
-                <Setter Property="Background" Value="#ffcfc2"/>
+                <Setter Property="Background" Value="#a76bcf"/>
             </Style>
 
             <Style TargetType="TextBlock">
@@ -25,14 +25,14 @@
                 <Setter Property="FontFamily" Value="Arial"/>
                 <Setter Property="FontSize" Value="24"/>
                 <Setter Property="Margin" Value="10, 5"/>
-                <Setter Property="Background" Value="#FAB7A4"/>
+                <Setter Property="Background" Value="#fffff0"/>
                 <Setter Property="VerticalContentAlignment" Value="Center"/>
             </Style>
             <Style TargetType="PasswordBox">
                 <Setter Property="FontFamily" Value="Arial"/>
                 <Setter Property="FontSize" Value="24"/>
                 <Setter Property="Margin" Value="10, 5"/>
-                <Setter Property="Background" Value="#FAB7A4"/>
+                <Setter Property="Background" Value="#fffff0"/>
                 <Setter Property="VerticalContentAlignment" Value="Center"/>
             </Style>
             <Style TargetType="ListView">
@@ -49,7 +49,7 @@
             </Style>
             <Style TargetType="Button">
                 <Setter Property="FontFamily" Value="Arial"/>
-                <Setter Property="Background" Value="#ad7261"/>
+                <Setter Property="Background" Value="#ff007c"/>
                 <Setter Property="FontSize" Value="18"/>
                 <Setter Property="Margin" Value="15, 5"/>
                 <Setter Property="Padding" Value="5"/>
