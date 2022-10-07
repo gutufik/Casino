@@ -10,6 +10,7 @@
 
     <Grid>
         <Grid.RowDefinitions>
+            <RowDefinition Height="0.2*"/>
             <RowDefinition/>
             <RowDefinition/>
         </Grid.RowDefinitions>
@@ -19,21 +20,27 @@
             <ColumnDefinition/>
         </Grid.ColumnDefinitions>
 
-        <TextBlock x:Name="leftDrum">
+        <TextBlock x:Name="TbPoint" Text="{Binding Path=Point}"/>
+
+        <TextBlock 
+            Grid.Row="1"
+            x:Name="leftDrum">
             
         </TextBlock>
         <TextBlock 
+            Grid.Row="1"
             Grid.Column="1"
             x:Name="centerDrum">
             
         </TextBlock>
         <TextBlock 
+            Grid.Row="1"
             Grid.Column="2"
             x:Name="rightDrum">
             
         </TextBlock>
         <Button
-            Grid.Row="1"
+            Grid.Row="2"
             Grid.Column="1"
             x:Name="BtnStartCasino"
             Click="BtnStartCasino_Click">

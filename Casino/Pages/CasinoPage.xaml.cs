@@ -12,6 +12,7 @@ using System.Windows.Navigation;
 using System.Windows.Shapes;
 using System.Threading;
 using System.Threading.Tasks;
+using Core;
 
 namespace Casino.Pages
 {
@@ -23,6 +24,7 @@ namespace Casino.Pages
         public CasinoPage()
         {
             InitializeComponent();
+            DataContext = App.User;
         }
 
         private async void BtnStartCasino_Click(object sender, RoutedEventArgs e)
@@ -45,17 +47,23 @@ namespace Casino.Pages
                     if (leftDrum.Text == centerDrum.Text && centerDrum.Text == rightDrum.Text)
                     {
                         MessageBox.Show("+1000");
+                        App.User.Point += 1000;
                     }
                     else if (leftDrum.Text == centerDrum.Text ||
                             leftDrum.Text == rightDrum.Text ||
                             centerDrum.Text == rightDrum.Text)
                     {
                         MessageBox.Show("+100");
+                        App.User.Point += 100;
                     }
                     else
                     {
                         MessageBox.Show("-10");
+                        App.User.Point -= 10;
                     }
+                    DataAccess.SaveUser(App.User);
+                    DataContext = App.User;
+                    TbPoint.Text = App.User.Point.ToString();
                 });
             });
         }

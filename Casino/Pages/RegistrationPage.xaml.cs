@@ -10,6 +10,7 @@ using System.Windows.Media;
 using System.Windows.Media.Imaging;
 using System.Windows.Navigation;
 using System.Windows.Shapes;
+using Core;
 
 namespace Casino.Pages
 {
@@ -27,6 +28,16 @@ namespace Casino.Pages
         {
             var login = tbLogin.Text;
             var passwrod = pbPassword.Password;
+            var user = new User { Login = login, Password = passwrod, Point = 100 };
+            if (DataAccess.SaveUser(user))
+            {
+                App.User = user;
+                NavigationService.Navigate(new CasinoPage());
+            }
+            else
+            {
+                MessageBox.Show("Такой пользователь уже зарегистрирован");
+            }
         }
     }
 }

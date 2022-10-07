@@ -13,6 +13,7 @@ using System.Windows.Media;
 using System.Windows.Media.Imaging;
 using System.Windows.Navigation;
 using System.Windows.Shapes;
+using Core;
 
 namespace Casino.Pages
 {
@@ -35,7 +36,15 @@ namespace Casino.Pages
         {
             var login = tbLogin.Text;
             var password = pbPassword.Password;
-            NavigationService.Navigate(new CasinoPage());
+
+            if ((App.User = DataAccess.GetUser(login, password)) != null)
+            {
+                NavigationService.Navigate(new CasinoPage());
+            }
+            else
+            {
+                MessageBox.Show("Неверный логин или пароль");
+            }
         }
     }
 }
